@@ -1,5 +1,5 @@
 import Reader = Deno.Reader;
-import Buffer = Deno.Buffer;
+import { Buffer } from "https://deno.land/std@0.201.0/io/buffer.ts";
 import copy = Deno.copy;
 
 export type CouchResponse = {
@@ -81,7 +81,7 @@ export class CouchError extends Error {
   }
 }
 
-export type NotModified = Symbol;
+export type NotModified = symbol;
 export const NotModified = Symbol("NotModified");
 export type CouchOptions = {
   basicAuth?: {
